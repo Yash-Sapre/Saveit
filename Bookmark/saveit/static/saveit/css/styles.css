@@ -1,0 +1,14 @@
+#title{
+    margin : 1em;
+    padding: 1em;
+    font-size: large;
+};
+#content{
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+};
+.plus{
+    background-color: transparent;
+};

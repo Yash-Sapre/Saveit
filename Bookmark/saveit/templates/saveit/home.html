@@ -1,0 +1,29 @@
+{% load static %}
+<link href="{% static 'saveit/css/styles.css' %}" rel="stylesheet" type="text/css">
+<div id="title">Your Bookmarks</div>
+<form method ="POST">
+{% csrf_token %}
+<br>
+Search : <input type = "text" name = "search_text"></input>
+<input type = "submit">
+</form>
+<div id="content">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Tags</th>
+        </tr>
+
+        {% for item in entries %}
+        <tr>
+            <td><a href="{{item.url}}">{{item.name}}</a></td>
+            <td>{{item.date}}</td>
+            <td>{% for tag in item.tags.all %}{{tag}},{% endfor %}<button class = "plus"><a href = "{% url 'saveit:add_tags' item.id %}">+</a></button></td>
+        </tr>
+
+        {% endfor %}
+
+        </tr>
+    </table>
+</div>

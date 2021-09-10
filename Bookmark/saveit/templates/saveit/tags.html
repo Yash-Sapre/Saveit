@@ -1,0 +1,10 @@
+<form method = "POST">
+{% csrf_token %}
+Bookmark entry<br>
+Name : {{entry.name}}<br>
+Url : {{entry.url}}<br>
+Date : {{entry.date}}<br>
+<br>
+Add the tags you want : <input type = "text" name = "tags"></input>
+<input type = "submit">
+</form>
